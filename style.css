@@ -124,11 +124,11 @@ a {
 
 .enter-card {
   opacity: 0;
-  transform: translateY(40px) rotateX(15deg) scale(0.9);
-  animation: cardPop 0.9s cubic-bezier(0.68,-0.55,0.27,1.55) forwards;
+  transform: translateY(50px) rotateX(20deg) scale(0.8);
+  animation: cardPop 1.8s cubic-bezier(0.68,-0.55,0.27,1.55) forwards;
 }
 @keyframes cardPop {
-  0% { opacity: 0; transform: translateY(40px) rotateX(15deg) scale(0.9); }
+  0% { opacity: 0; transform: translateY(50px) rotateX(20deg) scale(0.8); }
   60% { opacity: 1; transform: translateY(-5px) rotateX(-5deg) scale(1.05); }
   100% { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); }
 }

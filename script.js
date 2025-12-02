@@ -85,19 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
           el.classList.add('enter-heading');
         } else if(el.tagName === 'P') {
           el.classList.add('enter-para');
-        } else if(el.classList.contains('social-container')) {
+        } else if(el.classList.contains('social-container') || el.classList.contains('hero-text')  ) {
           el.classList.add('enter-card');
         }
       } else {
         
-        el.classList.remove('enter-img', 'enter-card', 'enter-subheading', 'enter-heading', 'enter-para', 'enter-section');
+        el.classList.remove('enter-img', 'enter-card', 'enter-subheading', 'enter-heading','enter-para', 'enter-section');
       }
     });
   }, { threshold: 0.2 });
 
   
   const elements = document.querySelectorAll(
-    'h1, h2, h3, p, section, .animate-card-on-scroll, .insight-card, .animate-image, img'
+    'h1, h2, h3, p, section, .animate-card-on-scroll, .insight-card,.social-container,.hero-text, .animate-image, img'
   );
 
   elements.forEach(el => observer.observe(el));
