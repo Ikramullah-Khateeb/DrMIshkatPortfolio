@@ -66,27 +66,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // for animation
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }else {
-      entry.target.classList.remove('in-view'); // Remove when out of view
-    }
-  });
-}, {
-  threshold: 0.2
-});
+document.addEventListener("DOMContentLoaded", () => {
 
-document.querySelectorAll('.animate-on-scroll,.animate-lift,.animate-card-on-scroll,.animate-image').forEach(el => {
-  observer.observe(el);
-});
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
 
+      if (entry.isIntersecting) {
+        
+        if(el.classList.contains('animate-image') || el.tagName === 'IMG') {
+          el.classList.add('enter-img');
+        } else if(el.classList.contains('animate-card-on-scroll') || el.classList.contains('insight-card')) {
+          el.classList.add('enter-card');
+        } else if(el.tagName === 'H3' && (el.closest('.insight-card') || el.closest('.timeline-item'))) {
+          el.classList.add('enter-subheading');
+        } else if(el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3') {
+          el.classList.add('enter-heading');
+        } else if(el.tagName === 'P') {
+          el.classList.add('enter-para');
+        } else if(el.classList.contains('social-container')) {
+          el.classList.add('enter-card');
+        }
+      } else {
+        
+        el.classList.remove('enter-img', 'enter-card', 'enter-subheading', 'enter-heading', 'enter-para', 'enter-section');
+      }
+    });
+  }, { threshold: 0.2 });
 
+  
+  const elements = document.querySelectorAll(
+    'h1, h2, h3, p, section, .animate-card-on-scroll, .insight-card, .animate-image, img'
+  );
 
-
-document.querySelectorAll(
-  '.animate-on-scroll, .animate-card-on-scroll,.animate-lift, .animate-image, .reveal-left, .reveal-right'
-).forEach(el => {
-  observer.observe(el);
+  elements.forEach(el => observer.observe(el));
 });
