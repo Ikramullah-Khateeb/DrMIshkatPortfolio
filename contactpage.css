@@ -171,11 +171,11 @@ a {
 }
 
 .logo {
-    padding-block: 12px;
+    padding-block: 8px;
 }
 
 .logo a img {
-    width: 13rem;
+    width: 10rem;
 }
 
 .menu {
@@ -262,7 +262,7 @@ a {
 /* contact hero css */
 .hero {
     position: relative;
-    background: url(./assets/5.jpg) bottom/cover;
+    background: url(./assets/contact.jpg) bottom/cover;
     color: #fff;
     padding: 60px 20px;
 }
@@ -335,7 +335,7 @@ form .row {
 }
 
 input,
-textarea {
+textarea,select {
     width: 100%;
     padding: 12px;
     border-radius: 1px 16px 1px 16px;
@@ -708,7 +708,7 @@ ease;
 /* ----------------- Footer Responsiveness: Below 768px ----------------- */
 @media (max-width: 768px) {
     .logo a img {
-      width: 10rem;
+      width: 8rem;
     }
     .footer-content {
         grid-template-columns: 1fr !important;
@@ -776,7 +776,7 @@ ease;
 /* ----------------- Footer Responsiveness: Below 480px ----------------- */
 @media (max-width: 480px) {
       .logo a img {
-      width: 8rem;
+      width: 7rem;
     }
     .footer-content {
         grid-template-columns: 1fr !important;
